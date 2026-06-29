@@ -3,102 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kostenloser Zufallszahlengenerator - Generieren Sie zufällige Zahlen online. Schnell, einfach und mobil-freundlich.">
-    <meta name="keywords" content="Zufallszahlengenerator, Randomizer, Zufallszahl, Online Tool">
+    <meta name="description" content="Kostenloser Zufallszahlengenerator - Generieren Sie zufällige Zahlen online. Schnell, sicher und ideal für Gewinnspiele, Passwörter oder Entscheidungen.">
+    <meta name="keywords" content="Zufallszahlengenerator, Randomizer, Zufallszahl, Online Tool, Nummerngenerator, Zufall, Auslosung">
     <meta name="author" content="Randomizer Generator Number">
     <meta name="theme-color" content="#6366f1">
-    <title>Randomizer Generator Number - Kostenloser Zufallszahlengenerator</title>
+    
+    <!-- Open Graph / Social Media Meta Tags for better SEO -->
+    <meta property="og:title" content="Randomizer Generator Number - Kostenloser Zufallszahlengenerator">
+    <meta property="og:description" content="Generieren Sie zufällige Zahlen online. Schnell, einfach und mobil-freundlich. 100% Datenschutz im Browser.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://randomizer-generator-number.pages.dev/">
+    
+    <title>Randomizer Generator Number - Kostenloser Zufallszahlengenerator Online</title>
     <link rel="canonical" href="https://randomizer-generator-number.pages.dev/">
+    
+    <!-- Schema.org Markup for Google Rich Snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Randomizer Generator Number",
+      "operatingSystem": "Web",
+      "applicationCategory": "UtilitiesApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      },
+      "description": "Ein kostenloser Online-Zufallszahlengenerator zur schnellen und sicheren Generierung von Zahlen für Gewinnspiele, Passwörter und Entscheidungen."
+    }
+    </script>
+
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             padding: 20px;
             color: #333;
+            line-height: 1.6;
         }
-
         .container {
-            max-width: 600px;
+            max-width: 800px;
             margin: 0 auto;
             background: white;
             border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             overflow: hidden;
         }
-
         header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             padding: 40px 20px;
             text-align: center;
         }
-
         header h1 {
-            font-size: 28px;
+            font-size: 32px;
             margin-bottom: 10px;
-            font-weight: 700;
+            font-weight: 800;
         }
-
         header p {
-            font-size: 14px;
-            opacity: 0.9;
+            font-size: 16px;
+            opacity: 0.95;
         }
-
         .content {
-            padding: 40px 20px;
+            padding: 40px 30px;
         }
-
         .tool-section {
-            margin-bottom: 30px;
+            max-width: 500px;
+            margin: 0 auto 40px auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid #f0f0f0;
         }
-
-        .tool-section h2 {
-            font-size: 20px;
-            margin-bottom: 20px;
-            color: #333;
-            text-align: center;
-        }
-
         .input-group {
             margin-bottom: 20px;
         }
-
         label {
             display: block;
             margin-bottom: 8px;
             font-weight: 600;
-            color: #555;
+            color: #444;
             font-size: 14px;
         }
-
         input[type="number"] {
             width: 100%;
-            padding: 12px;
+            padding: 12px 15px;
             border: 2px solid #e0e0e0;
             border-radius: 8px;
             font-size: 16px;
             transition: border-color 0.3s;
         }
-
         input[type="number"]:focus {
             outline: none;
             border-color: #667eea;
         }
-
         .button-group {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 10px;
+            gap: 12px;
             margin-bottom: 20px;
+            max-width: 500px;
+            margin: 20px auto;
         }
-
         button {
             padding: 14px 20px;
             border: none;
@@ -108,40 +122,26 @@
             cursor: pointer;
             transition: all 0.3s;
         }
-
         .btn-generate {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            grid-column: 1 / -1;
+            width: 100%;
+            margin-top: 10px;
         }
-
         .btn-generate:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
         }
-
         .btn-generate:active {
             transform: translateY(0);
         }
-
-        .btn-copy {
-            background: #f0f0f0;
-            color: #333;
+        .btn-copy, .btn-reset {
+            background: #f0f2f5;
+            color: #444;
         }
-
-        .btn-copy:hover {
-            background: #e0e0e0;
+        .btn-copy:hover, .btn-reset:hover {
+            background: #e4e6e9;
         }
-
-        .btn-reset {
-            background: #f0f0f0;
-            color: #333;
-        }
-
-        .btn-reset:hover {
-            background: #e0e0e0;
-        }
-
         .result-section {
             background: #f8f9ff;
             padding: 30px;
@@ -152,139 +152,179 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            border: 2px dashed #dce1ff;
+            max-width: 500px;
+            margin: 0 auto;
         }
-
         .result-label {
             font-size: 14px;
-            color: #999;
+            color: #667eea;
             margin-bottom: 10px;
             text-transform: uppercase;
             letter-spacing: 1px;
+            font-weight: 700;
         }
-
         .result-number {
             font-size: 64px;
-            font-weight: 700;
-            color: #667eea;
+            font-weight: 800;
+            color: #333;
             word-break: break-all;
         }
-
         .result-empty {
             font-size: 16px;
-            color: #999;
+            color: #888;
         }
-
         .features {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
             margin-top: 40px;
             padding-top: 30px;
             border-top: 1px solid #eee;
         }
-
         .feature {
             text-align: center;
+            padding: 15px;
         }
-
         .feature-icon {
             font-size: 32px;
             margin-bottom: 10px;
         }
-
         .feature-title {
-            font-weight: 600;
+            font-weight: 700;
             color: #333;
             margin-bottom: 5px;
-            font-size: 14px;
+            font-size: 15px;
         }
-
         .feature-desc {
-            font-size: 12px;
-            color: #999;
+            font-size: 13px;
+            color: #777;
+        }
+        
+        /* SEO Content Area Styles */
+        .seo-content {
+            margin-top: 40px;
+            background: #fdfdfd;
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.02);
+            border: 1px solid #f0f0f0;
+        }
+        .seo-content h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 15px;
+            margin-top: 25px;
+        }
+        .seo-content h2:first-child {
+            margin-top: 0;
+        }
+        .seo-content h3 {
+            font-size: 18px;
+            color: #444;
+            margin-bottom: 10px;
+            margin-top: 20px;
+        }
+        .seo-content p {
+            margin-bottom: 15px;
+            color: #555;
+            font-size: 15px;
+        }
+        .seo-content ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        .seo-content li {
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+        .seo-content a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .seo-content a:hover {
+            text-decoration: underline;
+            color: #764ba2;
         }
 
         footer {
             background: #f8f9ff;
-            padding: 30px 20px;
+            padding: 40px 20px;
             text-align: center;
-            border-top: 1px solid #eee;
+            border-top: 1px solid #eef0f5;
         }
-
         .footer-links {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 25px;
             margin-bottom: 20px;
             flex-wrap: wrap;
-            font-size: 14px;
+            font-size: 15px;
         }
-
         .footer-links a {
-            color: #667eea;
+            color: #555;
             text-decoration: none;
             transition: color 0.3s;
+            font-weight: 500;
         }
-
         .footer-links a:hover {
-            color: #764ba2;
-            text-decoration: underline;
+            color: #667eea;
         }
-
         .footer-credit {
-            font-size: 12px;
+            font-size: 13px;
             color: #999;
         }
-
         .copy-feedback {
             position: fixed;
-            bottom: 20px;
+            bottom: 30px;
             left: 50%;
             transform: translateX(-50%);
             background: #333;
             color: white;
             padding: 12px 24px;
-            border-radius: 8px;
+            border-radius: 30px;
+            font-weight: 600;
             opacity: 0;
-            transition: opacity 0.3s;
+            transition: opacity 0.3s, transform 0.3s;
             z-index: 1000;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            pointer-events: none;
         }
-
         .copy-feedback.show {
             opacity: 1;
+            transform: translateX(-50%) translateY(-10px);
         }
-
         .instruction-box {
-            background: #e8eaf6;
+            background: #eef2ff;
             border-left: 4px solid #667eea;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 25px;
-            font-size: 14px;
-            color: #555;
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 15px;
+            color: #4f46e5;
+            text-align: center;
         }
-
+        
+        @media (max-width: 768px) {
+            .features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
         @media (max-width: 480px) {
             header h1 {
-                font-size: 24px;
+                font-size: 26px;
             }
-
             .result-number {
                 font-size: 48px;
             }
-
-            .content {
-                padding: 25px 15px;
+            .content, .seo-content {
+                padding: 20px 15px;
             }
-
             .button-group {
                 grid-template-columns: 1fr;
             }
-
-            .btn-generate {
-                grid-column: 1;
-            }
-
             .features {
                 grid-template-columns: 1fr;
             }
@@ -292,70 +332,84 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <main class="container">
         <header>
-            <h1>🎲 Randomizer Generator</h1>
-            <p>Kostenloser Zufallszahlengenerator</p>
+            <h1>🎲 Zufallszahlengenerator</h1>
+            <p>Ihr zuverlässiger Randomizer für schnelle Ergebnisse</p>
         </header>
-
+        
         <div class="content">
             <div class="instruction-box">
-                💡 <strong>Wie es funktioniert:</strong> Geben Sie den minimalen und maximalen Wert ein und klicken Sie auf "Zufallszahl generieren".
+                💡 <strong>Anleitung:</strong> Geben Sie den minimalen und maximalen Wert ein, wählen Sie die Anzahl und klicken Sie auf "Generieren".
             </div>
-
+            
             <div class="tool-section">
                 <div class="input-group">
-                    <label for="minValue">Mindestwert:</label>
+                    <label for="minValue">Mindestwert (Von):</label>
                     <input type="number" id="minValue" value="1" placeholder="z.B. 1">
                 </div>
-
                 <div class="input-group">
-                    <label for="maxValue">Maximalwert:</label>
+                    <label for="maxValue">Maximalwert (Bis):</label>
                     <input type="number" id="maxValue" value="100" placeholder="z.B. 100">
                 </div>
-
                 <div class="input-group">
                     <label for="quantity">Anzahl der Zahlen:</label>
                     <input type="number" id="quantity" value="1" min="1" max="100" placeholder="z.B. 1">
                 </div>
-
                 <button class="btn-generate" onclick="generateRandomNumber()">🎲 Zufallszahl generieren</button>
             </div>
-
+            
             <div class="result-section">
                 <div class="result-label">Ihr Ergebnis</div>
                 <div id="result" class="result-empty">Klicken Sie auf "Generieren"</div>
             </div>
-
-            <div class="button-group" style="margin-top: 20px;">
+            
+            <div class="button-group">
                 <button class="btn-copy" onclick="copyToClipboard()">📋 Kopieren</button>
                 <button class="btn-reset" onclick="resetGenerator()">🔄 Zurücksetzen</button>
             </div>
-
+            
             <div class="features">
                 <div class="feature">
                     <div class="feature-icon">⚡</div>
                     <div class="feature-title">Schnell</div>
-                    <div class="feature-desc">Sofortige Ergebnisse</div>
+                    <div class="feature-desc">Sofortige Online-Ergebnisse ohne Ladezeit</div>
                 </div>
                 <div class="feature">
                     <div class="feature-icon">🔒</div>
                     <div class="feature-title">Sicher</div>
-                    <div class="feature-desc">100% Datenschutz</div>
+                    <div class="feature-desc">100% Datenschutz, keine Datenspeicherung</div>
                 </div>
                 <div class="feature">
                     <div class="feature-icon">📱</div>
                     <div class="feature-title">Mobil</div>
-                    <div class="feature-desc">Auf allen Geräten</div>
+                    <div class="feature-desc">Perfekt optimiert für Smartphones & Tablets</div>
                 </div>
                 <div class="feature">
                     <div class="feature-icon">✨</div>
                     <div class="feature-title">Kostenlos</div>
-                    <div class="feature-desc">Keine Registrierung</div>
+                    <div class="feature-desc">Komplett gratis und ohne Registrierung</div>
                 </div>
             </div>
-        </div>
 
+            <!-- SEO Content Section for Google Ranking & Backlinks -->
+            <article class="seo-content">
+                <h2>Wofür nutzt man einen Zufallszahlengenerator?</h2>
+                <p>Ein <strong>Zufallszahlengenerator</strong> (oft auch Randomizer genannt) ist ein unverzichtbares Online-Werkzeug, das mathematischen Zufall nutzt, um Nummern ohne bestimmtes Muster zu ziehen. Unser Tool ist besonders beliebt für Auslosungen, statistische Zwecke oder einfach als kleine Hilfe im Alltag.</p>
+
+                <h3>Beliebte Anwendungsbereiche im Alltag</h3>
+                <ul>
+                    <li><strong>Gewinnspiele & Wettbewerbe:</strong> Wenn Sie einen Wettbewerb auf Instagram oder Facebook veranstalten, weisen Sie jedem Teilnehmer eine Nummer zu. Unser Tool hilft Ihnen dabei, fair und unparteiisch einen Sieger zu ermitteln.</li>
+                    <li><strong>Sichere Passwörter:</strong> Nutzen Sie den Generator, um zufällige Ziffernfolgen für PIN-Codes oder sichere Passwörter zu erstellen.</li>
+                    <li><strong>Die Essens-Entscheidung:</strong> Können Sie sich mit Freunden oder der Familie nicht einigen, was bestellt wird? Geben Sie Ihren Optionen Nummern von 1 bis 3 und lassen Sie den Zufall entscheiden! Nummer 1 könnte zum Beispiel das <a href="https://angusbarnrestaurantmenu.org/" target="_blank">Angus Barn restaurant Menu</a> sein, Nummer 2 das beliebte <a href="https://moessouthwestgrillmenu.com/" target="_blank">moe's grill menu</a> und Nummer 3 das <a href="https://olivegarden-menu-with-prices.com/" target="_blank">olive garden menu</a>. Eine einfache Lösung für ein alltägliches Problem!</li>
+                    <li><strong>Bildung, Wissenschaft & Recherche:</strong> In der Forschung werden Zufallszahlen benötigt, um faire, unvoreingenommene Testgruppen zu erstellen. Wenn Sie sich für aktuelle Studien, Umfragen oder globale Nachrichten interessieren, bieten große Portale wie <a href="https://www.bbc.com/news" target="_blank" rel="nofollow">BBC News</a>, <a href="https://edition.cnn.com/" target="_blank" rel="nofollow">CNN</a> oder <a href="https://www.spiegel.de/" target="_blank" rel="nofollow">Spiegel Online</a> hervorragende Hintergrundberichte.</li>
+                </ul>
+
+                <h2>Wie funktioniert dieser Randomizer?</h2>
+                <p>Die Anwendung ist denkbar einfach aufgebaut. Sie müssen lediglich eine Untergrenze (Mindestwert) und eine Obergrenze (Maximalwert) definieren. Möchten Sie mehrere Zahlen gleichzeitig ziehen? Ändern Sie einfach die "Anzahl der Zahlen". Unser Algorithmus nutzt die in Ihrem Browser integrierte JavaScript-Funktion, was bedeutet, dass die Berechnung blitzschnell auf Ihrem eigenen Gerät stattfindet. So ist Ihre Privatsphäre jederzeit gewährleistet.</p>
+            </article>
+        </div>
+        
         <footer>
             <div class="footer-links">
                 <a href="about.html">Über uns</a>
@@ -367,32 +421,36 @@
                 © 2026 Randomizer Generator Number. Alle Rechte vorbehalten.
             </div>
         </footer>
-    </div>
-
-    <div class="copy-feedback" id="copyFeedback">✓ In die Zwischenablage kopiert!</div>
-
+    </main>
+    
+    <div class="copy-feedback" id="copyFeedback">✓ Erfolgreich kopiert!</div>
+    
     <script>
         function generateRandomNumber() {
-            const minValue = parseInt(document.getElementById('minValue').value) || 0;
-            const maxValue = parseInt(document.getElementById('maxValue').value) || 100;
+            const minValue = parseInt(document.getElementById('minValue').value);
+            const maxValue = parseInt(document.getElementById('maxValue').value);
             const quantity = parseInt(document.getElementById('quantity').value) || 1;
-
+            
+            if (isNaN(minValue) || isNaN(maxValue)) {
+                alert('Bitte geben Sie gültige Zahlen ein!');
+                return;
+            }
             if (minValue > maxValue) {
-                alert('Mindestwert darf nicht größer als Maximalwert sein!');
+                alert('Der Mindestwert darf nicht größer als der Maximalwert sein!');
                 return;
             }
-
             if (quantity < 1 || quantity > 100) {
-                alert('Anzahl der Zahlen muss zwischen 1 und 100 liegen!');
+                alert('Die Anzahl der Zahlen muss zwischen 1 und 100 liegen!');
                 return;
             }
-
+            
             let results = [];
             for (let i = 0; i < quantity; i++) {
+                // Generates a random number inclusive of min and max
                 const randomNum = Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue;
                 results.push(randomNum);
             }
-
+            
             const resultDiv = document.getElementById('result');
             if (results.length === 1) {
                 resultDiv.textContent = results[0];
@@ -400,36 +458,54 @@
             } else {
                 resultDiv.textContent = results.join(', ');
                 resultDiv.className = 'result-number';
-                resultDiv.style.fontSize = '24px';
+                resultDiv.style.fontSize = '32px';
             }
         }
-
+        
         function copyToClipboard() {
             const resultDiv = document.getElementById('result');
             const text = resultDiv.textContent;
-
+            
             if (text === 'Klicken Sie auf "Generieren"') {
                 alert('Bitte generieren Sie zunächst eine Zufallszahl!');
                 return;
             }
-
+            
             navigator.clipboard.writeText(text).then(() => {
                 const feedback = document.getElementById('copyFeedback');
                 feedback.classList.add('show');
                 setTimeout(() => {
                     feedback.classList.remove('show');
-                }, 2000);
+                }, 2500);
+            }).catch(err => {
+                // Fallback for older browsers
+                const textArea = document.createElement("textarea");
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    const feedback = document.getElementById('copyFeedback');
+                    feedback.classList.add('show');
+                    setTimeout(() => {
+                        feedback.classList.remove('show');
+                    }, 2500);
+                } catch (err) {
+                    console.error('Kopieren fehlgeschlagen', err);
+                }
+                document.body.removeChild(textArea);
             });
         }
-
+        
         function resetGenerator() {
             document.getElementById('minValue').value = '1';
             document.getElementById('maxValue').value = '100';
             document.getElementById('quantity').value = '1';
             document.getElementById('result').textContent = 'Klicken Sie auf "Generieren"';
             document.getElementById('result').className = 'result-empty';
+            document.getElementById('result').style.fontSize = ''; // Reset custom inline font size
         }
-
+        
         // Allow Enter key to generate
         document.addEventListener('keypress', function(event) {
             if (event.key === 'Enter') {
