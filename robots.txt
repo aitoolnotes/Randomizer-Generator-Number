@@ -1,25 +1,19 @@
-# Robots.txt for Randomizer Generator Number
-# Allow all search engines to crawl the website
+Robots.txt for Randomizer Generator Number
+
+Allow all search engines to crawl the single-page website
 
 User-agent: *
 Allow: /
-Disallow: 
+Disallow:
 
-# Sitemap location
-Sitemap: https://randomizer-generator-number.pages.dev/sitemap.xml
+Specific rules for major search engines
 
-# Specific rules for major search engines
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
 Allow: /
 
-User-agent: Slurp
-Allow: /
+Sitemap location
 
-User-agent: DuckDuckBot
-Allow: /
-
-# Crawl delay (optional - can help with server load)
-# Crawl-delay: 1
+Sitemap: https://randomizer-generator-number.pages.dev/sitemap.xml
