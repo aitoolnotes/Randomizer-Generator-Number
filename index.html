@@ -41,6 +41,9 @@
             padding: 0;
             box-sizing: border-box;
         }
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -129,11 +132,11 @@
             width: 100%;
             margin-top: 10px;
         }
-        .btn-generate:hover {
+        .btn-generate:hover, .submit-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
         }
-        .btn-generate:active {
+        .btn-generate:active, .submit-btn:active {
             transform: translateY(0);
         }
         .btn-copy, .btn-reset {
@@ -202,8 +205,8 @@
             color: #777;
         }
         
-        /* SEO Content Area Styles */
-        .seo-content {
+        /* SEO & Info Content Area Styles */
+        .seo-content, .info-section {
             margin-top: 40px;
             background: #fdfdfd;
             padding: 35px;
@@ -211,43 +214,139 @@
             box-shadow: inset 0 0 10px rgba(0,0,0,0.02);
             border: 1px solid #f0f0f0;
         }
-        .seo-content h2 {
+        .info-section {
+            margin-top: 20px;
+            scroll-margin-top: 20px; /* Provides breathing room when smooth scrolling */
+        }
+        .seo-content h2, .info-section h2 {
             font-size: 24px;
             color: #333;
             margin-bottom: 15px;
             margin-top: 25px;
         }
-        .seo-content h2:first-child {
+        .seo-content h2:first-child, .info-section h2:first-child {
             margin-top: 0;
+            color: #667eea;
         }
-        .seo-content h3 {
+        .seo-content h3, .info-section h3 {
             font-size: 18px;
             color: #444;
             margin-bottom: 10px;
             margin-top: 20px;
         }
-        .seo-content p {
+        .seo-content p, .info-section p {
             margin-bottom: 15px;
             color: #555;
             font-size: 15px;
         }
-        .seo-content ul {
+        .seo-content ul, .info-section ul {
             margin-left: 20px;
             margin-bottom: 20px;
             color: #555;
         }
-        .seo-content li {
+        .seo-content li, .info-section li {
             margin-bottom: 10px;
             font-size: 15px;
         }
-        .seo-content a {
+        .seo-content a, .info-section a {
             color: #667eea;
             text-decoration: none;
             font-weight: 500;
         }
-        .seo-content a:hover {
+        .seo-content a:hover, .info-section a:hover {
             text-decoration: underline;
             color: #764ba2;
+        }
+
+        /* Specific Info Section Styles */
+        .feature-list {
+            list-style: none !important;
+            margin-left: 0 !important;
+        }
+        .feature-list li {
+            padding-left: 30px;
+            position: relative;
+        }
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .warning-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+        .warning-box strong {
+            color: #856404;
+        }
+
+        /* Contact Form Styles */
+        .contact-form-group {
+            margin-bottom: 20px;
+        }
+        .contact-form-group input[type="text"],
+        .contact-form-group input[type="email"],
+        .contact-form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+        .contact-form-group input[type="text"]:focus,
+        .contact-form-group input[type="email"]:focus,
+        .contact-form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        .contact-form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+        .submit-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 14px 30px;
+            width: 100%;
+        }
+        .contact-info {
+            background: #f8f9ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .info-item:last-child {
+            margin-bottom: 0;
+        }
+        .info-icon {
+            font-size: 24px;
+            margin-right: 15px;
+        }
+        .success-message {
+            display: none;
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #c3e6cb;
+        }
+        .success-message.show {
+            display: block;
         }
 
         footer {
@@ -320,7 +419,7 @@
             .result-number {
                 font-size: 48px;
             }
-            .content, .seo-content {
+            .content, .seo-content, .info-section {
                 padding: 20px 15px;
             }
             .button-group {
@@ -393,7 +492,7 @@
                 </div>
             </div>
 
-            <!-- SEO Content Section for Google Ranking & Backlinks -->
+            <!-- SEO Content Section -->
             <article class="seo-content">
                 <h2>Wofür nutzt man einen Zufallszahlengenerator?</h2>
                 <p>Ein <strong>Zufallszahlengenerator</strong> (oft auch Randomizer genannt) ist ein unverzichtbares Online-Werkzeug, das mathematischen Zufall nutzt, um Nummern ohne bestimmtes Muster zu ziehen. Unser Tool ist besonders beliebt für Auslosungen, statistische Zwecke oder einfach als kleine Hilfe im Alltag.</p>
@@ -409,14 +508,150 @@
                 <h2>Wie funktioniert dieser Randomizer?</h2>
                 <p>Die Anwendung ist denkbar einfach aufgebaut. Sie müssen lediglich eine Untergrenze (Mindestwert) und eine Obergrenze (Maximalwert) definieren. Möchten Sie mehrere Zahlen gleichzeitig ziehen? Ändern Sie einfach die "Anzahl der Zahlen". Unser Algorithmus nutzt die in Ihrem Browser integrierte JavaScript-Funktion, was bedeutet, dass die Berechnung blitzschnell auf Ihrem eigenen Gerät stattfindet. So ist Ihre Privatsphäre jederzeit gewährleistet.</p>
             </article>
+
+            <!-- Consolidated Pages Sections -->
+            
+            <section id="about" class="info-section">
+                <h2>📖 Über uns</h2>
+                <h3>Wer wir sind</h3>
+                <p>
+                    Randomizer Generator Number ist eine kostenlose Online-Plattform, die entwickelt wurde, um ein einfaches und zuverlässiges Tool 
+                    für die Generierung von Zufallszahlen bereitzustellen. Unsere Mission ist es, Menschen überall ein benutzerfreundliches Tool 
+                    zur Verfügung zu stellen, das sie für verschiedene Zwecke nutzen können.
+                </p>
+
+                <h3>Unser Ziel</h3>
+                <p>
+                    Wir glauben, dass Technologie für alle zugänglich sein sollte. Deshalb haben wir Randomizer Generator Number kostenlos gemacht 
+                    und ohne versteckte Gebühren, Registrierung oder nervige Werbung.
+                </p>
+
+                <h3>Was wir anbieten</h3>
+                <ul class="feature-list">
+                    <li>Kostenloser Zufallszahlengenerator</li>
+                    <li>Benutzerfreundliche Oberfläche</li>
+                    <li>Mobil-optimiertes Design</li>
+                    <li>Keine Datenerfassung oder Tracking</li>
+                    <li>Schnelle und zuverlässige Ergebnisse</li>
+                    <li>Mehrere Zahlen gleichzeitig generieren</li>
+                </ul>
+
+                <h3>Warum Randomizer Generator Number?</h3>
+                <p>
+                    Egal ob Sie Lotteriezahlen wählen möchten, ein Spiel spielen, eine wissenschaftliche Stichprobe durchführen oder einfach nur 
+                    eine zufällige Entscheidung treffen möchten – unser Tool ist perfekt für Sie. Es ist schnell, zuverlässig und absolut kostenlos.
+                </p>
+            </section>
+
+            <section id="privacy-policy" class="info-section">
+                <h2>🔒 Datenschutzrichtlinie</h2>
+                <p><strong>Gültig ab: Januar 2024</strong></p>
+
+                <h3>Einleitung</h3>
+                <p>Bei Randomizer Generator Number nehmen wir den Schutz Ihrer Privatsphäre sehr ernst. Diese Datenschutzrichtlinie erklärt, wie wir mit Ihren Daten umgehen.</p>
+
+                <h3>Informationen, die wir sammeln</h3>
+                <p><strong>Persönliche Daten:</strong> Randomizer Generator Number sammelt keine persönlichen Daten von Ihnen. Wir speichern keine Namen, E-Mail-Adressen, Telefonnummern oder andere Identifizierungsinformationen.</p>
+
+                <h3>Automatisch erfasste Informationen</h3>
+                <p>Wenn Sie unsere Website besuchen, erfassen wir möglicherweise automatisch:</p>
+                <ul>
+                    <li>Ihren Browser-Typ und -Version</li>
+                    <li>Ihre IP-Adresse (die wir nicht speichern)</li>
+                    <li>Seiten, die Sie besucht haben</li>
+                    <li>Zeitstempel Ihres Besuchs</li>
+                </ul>
+
+                <h3>Cookies & Analytics</h3>
+                <p>Randomizer Generator Number verwendet keine Cookies für Tracking oder Werbung. Der lokale Speicher wird nicht verwendet, um persönliche Daten zu speichern. Wir verwenden möglicherweise grundlegende Webserver-Logs zur Analyse der Website-Nutzung. Diese Informationen werden nicht mit persönlichen Daten verknüpft.</p>
+
+                <h3>Sicherheit</h3>
+                <p>Obwohl wir keine sensiblen Daten sammeln, verwenden wir Sicherheitsmaßnahmen zum Schutz unserer Website. Alle Verbindungen erfolgen über HTTPS.</p>
+            </section>
+
+            <section id="disclaimer" class="info-section">
+                <h2>⚠️ Haftungsausschluss</h2>
+                <p><strong>Gültig ab: Januar 2026</strong></p>
+
+                <div class="warning-box">
+                    <strong>Wichtig:</strong> Bitte lesen Sie diesen Haftungsausschluss sorgfältig durch, bevor Sie unseren Service nutzen.
+                </div>
+
+                <h3>Allgemeiner Haftungsausschluss & Garantie</h3>
+                <p>Randomizer Generator Number wird "wie besehen" bereitgestellt. Wir machen keine Garantien oder Zusicherungen, weder ausdrücklich noch stillschweigend, hinsichtlich der Genauigkeit, Zuverlässigkeit oder Vollständigkeit des Services.</p>
+                <p>Obwohl unser Tool einen Zufallszahlengenerator verwendet, können wir nicht garantieren, dass die generierten Zahlen für kryptografische Zwecke oder andere hochsensible Anwendungen sicher sind. Für solche Zwecke verwenden Sie bitte spezialisierte kryptografische Zufallszahlengeneratoren.</p>
+
+                <h3>Einschränkung der Haftung & Nutzung</h3>
+                <p>In keinem Fall haften Randomizer Generator Number, seine Eigentümer oder Mitarbeiter für Schäden, die sich aus der Nutzung oder Unfähigkeit zur Nutzung dieses Services ergeben. Sie nutzen Randomizer Generator Number auf eigene Gefahr. Sie sind allein verantwortlich für die Entscheidungen, die Sie auf Grundlage der mit unserem Tool generierten Zahlen treffen.</p>
+
+                <h3>Glücksspiel und Wetten</h3>
+                <p>Dieses Tool ist nicht für Glücksspiel oder Wetten gedacht. Wir haften nicht für finanzielle Verluste, die sich aus der Verwendung dieses Tools ergeben.</p>
+            </section>
+
+            <section id="contact" class="info-section">
+                <h2>✉️ Kontaktieren Sie uns</h2>
+                <p>Haben Sie Fragen, Vorschläge oder Feedback zu unserem Randomizer Generator? Wir würden gerne von Ihnen hören! Füllen Sie das Formular unten aus und wir werden Sie so schnell wie möglich kontaktieren.</p>
+
+                <div class="success-message" id="successMessage">
+                    ✓ Vielen Dank für Ihre Nachricht! Wir werden uns bald bei Ihnen melden.
+                </div>
+
+                <form id="contactForm">
+                    <div class="contact-form-group">
+                        <label for="name">Name*</label>
+                        <input type="text" id="name" name="name" required placeholder="Ihr Name">
+                    </div>
+
+                    <div class="contact-form-group">
+                        <label for="email">E-Mail*</label>
+                        <input type="email" id="email" name="email" required placeholder="Ihre E-Mail-Adresse">
+                    </div>
+
+                    <div class="contact-form-group">
+                        <label for="subject">Betreff*</label>
+                        <input type="text" id="subject" name="subject" required placeholder="Worum geht es?">
+                    </div>
+
+                    <div class="contact-form-group">
+                        <label for="message">Nachricht*</label>
+                        <textarea id="message" name="message" required placeholder="Schreiben Sie hier Ihre Nachricht..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">📧 Nachricht senden</button>
+                </form>
+
+                <div class="contact-info">
+                    <div class="info-item">
+                        <div class="info-icon">⚡</div>
+                        <div class="info-text">
+                            <strong>Schnelle Antwort:</strong> Wir versuchen, alle Nachrichten innerhalb von 24 Stunden zu beantworten.
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">🔒</div>
+                        <div class="info-text">
+                            <strong>Datenschutz:</strong> Ihre Daten werden vertraulich behandelt und nicht weitergegeben.
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">🌍</div>
+                        <div class="info-text">
+                            <strong>Global:</strong> Wir antworten auf Nachrichten in Deutsch, Englisch und anderen Sprachen.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
         </div>
         
         <footer>
+            <!-- Links now point to internal IDs rather than separate pages -->
             <div class="footer-links">
-                <a href="about">Über uns</a>
-                <a href="privacy-policy">Datenschutz</a>
-                <a href="disclaimer">Haftungsausschluss</a>
-                <a href="contact">Kontakt</a>
+                <a href="#">Startseite</a>
+                <a href="#about">Über uns</a>
+                <a href="#privacy-policy">Datenschutz</a>
+                <a href="#disclaimer">Haftungsausschluss</a>
+                <a href="#contact">Kontakt</a>
             </div>
             <div class="footer-credit">
                 © 2026 Randomizer Generator Number. Alle Rechte vorbehalten.
@@ -427,6 +662,7 @@
     <div class="copy-feedback" id="copyFeedback">✓ Erfolgreich kopiert!</div>
     
     <script>
+        // --- Generator Logic ---
         function generateRandomNumber() {
             const minValue = parseInt(document.getElementById('minValue').value);
             const maxValue = parseInt(document.getElementById('maxValue').value);
@@ -447,7 +683,6 @@
             
             let results = [];
             for (let i = 0; i < quantity; i++) {
-                // Generates a random number inclusive of min and max
                 const randomNum = Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue;
                 results.push(randomNum);
             }
@@ -479,7 +714,6 @@
                     feedback.classList.remove('show');
                 }, 2500);
             }).catch(err => {
-                // Fallback for older browsers
                 const textArea = document.createElement("textarea");
                 textArea.value = text;
                 document.body.appendChild(textArea);
@@ -504,14 +738,40 @@
             document.getElementById('quantity').value = '1';
             document.getElementById('result').textContent = 'Klicken Sie auf "Generieren"';
             document.getElementById('result').className = 'result-empty';
-            document.getElementById('result').style.fontSize = ''; // Reset custom inline font size
+            document.getElementById('result').style.fontSize = '';
         }
         
-        // Allow Enter key to generate
         document.addEventListener('keypress', function(event) {
             if (event.key === 'Enter') {
-                generateRandomNumber();
+                // Only generate if not focusing on a textarea or text input (like contact form)
+                if(document.activeElement.tagName !== 'TEXTAREA' && document.activeElement.type !== 'text' && document.activeElement.type !== 'email') {
+                     generateRandomNumber();
+                }
             }
+        });
+
+        // --- Contact Form Logic ---
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            // Construct mailto link
+            const mailtoLink = `mailto:contact@example.com?subject=${encodeURIComponent('Kontakt: ' + subject)}&body=${encodeURIComponent('Name: ' + name + '\nE-Mail: ' + email + '\n\n' + message)}`;
+
+            // Open the default email client
+            window.location.href = mailtoLink;
+
+            // Show success message
+            document.getElementById('successMessage').classList.add('show');
+
+            // Reset form
+            setTimeout(() => {
+                this.reset();
+            }, 500);
         });
     </script>
 </body>
